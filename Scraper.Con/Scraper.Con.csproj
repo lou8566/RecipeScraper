@@ -72,6 +72,10 @@
       <Project>{46503C90-65C7-450E-A9A4-53268075B90D}</Project>
       <Name>Scraper.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Scraper.Interfaces\Scraper.Interfaces.csproj">
+      <Project>{6D94C828-9CFE-4A6D-BE68-1BC072FBC27C}</Project>
+      <Name>Scraper.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

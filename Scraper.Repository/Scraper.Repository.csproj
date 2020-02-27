@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FA440233-4CBB-4EFF-B31B-006C4F774D9C}</ProjectGuid>
+    <ProjectGuid>{B23747A1-173A-4E48-B502-4C3EBB5A7002}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Scaper.Core</RootNamespace>
-    <AssemblyName>Scaper.Core</AssemblyName>
+    <RootNamespace>Scraper.Repository</RootNamespace>
+    <AssemblyName>Scraper.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -40,9 +40,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.11.21.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlAgilityPack.1.11.21\lib\Net45\HtmlAgilityPack.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,11 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Importers\AllRecipesImporter.cs" />
-    <Compile Include="Importers\KraftRecipesImporter.cs" />
-    <Compile Include="RecipeImporter.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\PageServices.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Scraper.Data\Scraper.Data.csproj">
@@ -68,10 +63,6 @@
     <ProjectReference Include="..\Scraper.Interfaces\Scraper.Interfaces.csproj">
       <Project>{6D94C828-9CFE-4A6D-BE68-1BC072FBC27C}</Project>
       <Name>Scraper.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Scraper.Repository\Scraper.Repository.csproj">
-      <Project>{B23747A1-173A-4E48-B502-4C3EBB5A7002}</Project>
-      <Name>Scraper.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

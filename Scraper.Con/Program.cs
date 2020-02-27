@@ -1,10 +1,12 @@
 ﻿using HtmlAgilityPack;
+using Scaper.Core;
+using Scaper.Core.Importers;
 using Scraper.Data.Models;
+using Scraper.Interfaces.Importers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-
 
 namespace Scraper.Con
 {
@@ -16,8 +18,12 @@ namespace Scraper.Con
 
         static void Main(string[] args)
         {
-            GetRecipeHeadersAsync(1, 1); //1, 413
-            //GetRecipeDetailsAsync();
+            IRecipesImporter importer = new KraftRecipesImporter();
+            var imp = new RecipeImporter(importer);
+
+            imp.ScrapeRecipeHeaders(2, 2);
+            //imp.ScrapeRecipeIngredients();
+
             Console.Read();
         }
 
