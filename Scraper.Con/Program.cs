@@ -16,18 +16,21 @@ namespace Scraper.Con
 
         static void Main(string[] args)
         {
-            GetRecipeHeadersAsync();
+            GetRecipeHeadersAsync(1, 1); //1, 413
             //GetRecipeDetailsAsync();
             Console.Read();
         }
 
-        private static async void GetRecipeHeadersAsync()
+        private static async void GetRecipeHeadersAsync(int startPage, int endPage)
         {
+            if (startPage > endPage)
+                throw ArgumentException("Start Page must be less than or equal to the End Page");
+
             const string baseUrl = "https://www.allrecipes.com/recipes/87/everyday-cooking/vegetarian?page=";
 
             var urls = new List<string>();
 
-            for (var i = 2; i < 414; i++) // 414
+            for (var i = startPage; i <= endPage; i++) // 414
             {
                 urls.Add(baseUrl + i);
             }
@@ -49,6 +52,11 @@ namespace Scraper.Con
 
             Console.WriteLine("Completed");
             Console.Read();
+        }
+
+        private static Exception ArgumentException(string v)
+        {
+            throw new NotImplementedException();
         }
 
         private static void ExtractDetailsIntoHeaders(List<HtmlNode> recipeList)
