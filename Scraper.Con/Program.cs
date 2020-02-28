@@ -23,7 +23,7 @@ namespace Scraper.Con
 
             imp.ScrapeRecipeHeaders(2, 2);
             //imp.ScrapeRecipeIngredients();
-
+            Console.WriteLine("Completed");
             Console.Read();
         }
 

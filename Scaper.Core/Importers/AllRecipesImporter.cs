@@ -87,7 +87,7 @@ namespace Scaper.Core.Importers
                 .Where(node => node.GetAttributeValue("class", "")
                     .Equals("fixed-recipe-card")).ToList();
 
-            var details = recipeList[0].Descendants("ar-save-item").ToList();
+            //var details = recipeList[0].Descendants("ar-save-item").ToList();
             return recipeList;
         }
 
